@@ -1,0 +1,23 @@
+# Common simulation outputs
+*.vcd
+*.fst
+*.vpd
+*.wlf
+*.ghw
+*.fsdb
+*.vdb/
+
+# Tool-generated build directories
+build/
+sim_build/
+obj_dir/
+work/
+xsim.dir/
+.Xil/
+
+# Editors / scripts
+.DS_Store
+*.swp
+*.swo
+__pycache__/
+*.pyc
