@@ -11,7 +11,7 @@ Stone Arch Silicon develops **one reusable SystemVerilog IP block at a time**, w
 ```text
 ip/<block_name>/
 ├── rtl/          Synthesizable RTL
-├── tb/           Tests and assertions
+├── dv/           Verification
 ├── pd/           Physical Design Scripts
 ├── docs/
 │   ├── specification.md
