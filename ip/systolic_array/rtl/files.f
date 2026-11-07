@@ -1,0 +1,12 @@
+rtl/sa_pkg.sv
+rtl/delay.sv
+rtl/product.sv
+rtl/pe_os.sv
+rtl/array_os.sv
+rtl/pe_ws.sv
+rtl/array_ws.sv
+rtl/finalize.sv
+rtl/fifo.sv
+rtl/engine.sv
+rtl/csr.sv
+rtl/sa_top.sv
