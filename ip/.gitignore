@@ -1,0 +1,29 @@
+# Synopsys VCS
+csrc/
+simv
+simv_*
+*.daidir/
+*.vdb/
+*.vpd
+*.vcd
+*.evcd
+*.fsdb
+ucli.key
+vc_hdrs.h
+DVEfiles/
+urgReport/
+
+# Synopsys Design Compiler / PrimeTime
+*.ddc
+*.svf
+*.sdf
+*.spef
+
+# Generated reports and logs
+*.log
+Synopsys_stack_trace_*.txt
+crte_*.txt
+
+# Generated implementation data
+*.nlib/
+*.ndm/
