@@ -938,7 +938,7 @@ These are architectural motivations. No statement here establishes a measured ad
 
 ### 7.2 Physical-design responsibilities
 
-The RTL has no FPGA DSP/BRAM primitive, hardcoded standard-cell instance, internally generated clock, asynchronous data reset, or internal tri-state bus. The multipliers, shifts, adders, and registers must be mapped in the chosen ASIC flow.
+The multipliers, shifts, adders, and registers must be mapped in the chosen ASIC flow.
 
 Clock-tree synthesis, reset/control buffering, placement, routing, DFT/scan insertion, power intent, timing constraints, and technology-library setup remain system responsibilities. Clock enables are RTL enables; any integrated clock-gating transformation belongs to a qualified synthesis/implementation flow.
 
