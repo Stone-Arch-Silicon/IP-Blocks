@@ -4,9 +4,9 @@
 **Design owner:** Stone Arch Silicon · **RTL engineer:** Paulo Dietrich  
 **Public module:** `sa_top` · **Only hardware customization file:** `rtl/sa_pkg.sv`
 
-This guide takes you from the delivered files to a working matrix multiplication inside an accelerator. It assumes you know basic clocks and binary numbers but may be new to systolic arrays, streaming interfaces, or AXI4-Lite.
+This guide takes you from the delivered files to a working matrix multiplication inside an accelerator. 
 
-The [specification](specification.md) is the detailed interface/numeric reference. The [architecture](architecture.md) explains every RTL module and signal, with the supplied Lucid diagrams. This guide uses the same delivered source baseline: short module names, explicit controller FSMs, and the zero-depth delay fix.
+The [specification](specification.md) is the detailed interface/numeric reference. The [architecture](architecture.md) explains every RTL module and signal, with the supplied diagrams.
 
 ### Contents
 
@@ -40,7 +40,7 @@ The complete block has five connection groups:
 | `s_weight_*` | Weight-buffer reader or second DMA adapter | In WS, load full physical B tiles into the shadow bank. |
 | `m_axis_*`, `irq` | Result-buffer writer and interrupt controller | Accept rows/flags, handle completion/errors, and make results visible to consumers. |
 
-![Supplied Lucid overview of the IP and its surrounding host/storage connections](images/lucid_ip_overview.png)
+![Overview of the IP and its surrounding host/storage connections](images/lucid_ip_overview.png)
 
 *The memories and DMA shown outside the boundary are supplied by the surrounding accelerator. The IP does not fetch data from a memory address by itself.*
 
