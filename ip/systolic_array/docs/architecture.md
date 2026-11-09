@@ -34,9 +34,7 @@ The physical `ROWS` constant therefore means different things in the two maps. O
 
 ### 1.2 Read the public block diagram
 
-![Supplied Lucid page 1: public IP boundary and internal hierarchy](images/lucid_ip_overview.png)
-
-*Figure 1. Export of page 1 of the [user-supplied Lucid diagram](https://lucid.app/lucidchart/3d096fdb-01a2-4301-95d9-660d5201a26d/edit). External memories/DMA are outside the IP boundary.*
+![Public IP boundary and internal hierarchy](images/lucid_ip_overview.png)
 
 Read the drawing as two connected paths:
 
