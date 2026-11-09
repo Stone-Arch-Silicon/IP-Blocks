@@ -2,11 +2,6 @@
 
 **Document version:** 1.0 · **Date:** 8 November 2026  
 **Design owner:** Stone Arch Silicon · **RTL engineer:** Paulo Dietrich  
-**Source baseline:** Delivered short-name RTL in `Systolic_IP_Testbenches.zip`, including the revision 0.04 zero-depth fix in `delay.sv`.
-
-This document explains how the circuit works, from matrix multiplication to individual pipeline registers. It includes the supplied Lucid overview and both mesh diagrams, followed by a section for every RTL source file. The [specification](specification.md) defines externally visible behavior; the [integration guide](integration_guide.md) shows how to connect and operate the block.
-
-You do not need prior systolic-array knowledge. Start at section 1 and follow one operand through the drawings. If you are reviewing RTL, jump to the module directory in section 5.
 
 ### Contents
 
