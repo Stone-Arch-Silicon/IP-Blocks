@@ -2,13 +2,6 @@
 
 **Document version:** 1.0 · **Date:** 8 November 2026  
 **Design owner:** Stone Arch Silicon · **RTL engineer:** Paulo Dietrich  
-**Public hardware module:** `sa_top` · **Configuration package:** `sa_pkg`
-
-This document defines what the delivered IP computes and how its interfaces behave. It is written for both a first-time user and an engineer implementing a driver, DMA adapter, or verification environment. Read the introductory sections first; use the tables as a reference afterward.
-
-**Source baseline.** These documents describe the RTL in `Systolic_IP_Testbenches.zip`, with short module names, explicit state/next-state controllers, and the revision 0.04 zero-depth declaration fix in `delay.sv`. The other RTL headers identify revision 0.03. The default package is an 8 × 8, output-stationary, signed INT8 build. These are specifications of that delivered implementation, not proposed features of a future version. No RTL is changed by this documentation package.
-
-Place this `docs` directory beside the project's `rtl`, `tb`, and `tools` directories. Source links then resolve directly. The complete documentation archive includes the three PNG exports of the supplied Lucid diagram.
 
 ## Reading map
 
