@@ -4,7 +4,7 @@
 
 Stone Arch Silicon develops **one reusable SystemVerilog IP block at a time**, with the whole organization contributing. Completed blocks remain here for future FPGA, ASIC, and SoC projects.
 
-**Active IP:** _To be selected — update this line when the project starts._
+**Active IP:** Parametrized systolic array with AXI-Lite wrapper
 
 ## Structure
 
