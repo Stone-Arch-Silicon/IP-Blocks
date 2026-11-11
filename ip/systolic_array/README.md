@@ -160,29 +160,7 @@ A default 8×8 OS INT8 build therefore has 128-bit operand input, 64-bit unused 
 
 ## Architecture and assumptions
 
-```text
-                          AXI4-Lite
-                               |
-                            +-----+
-                            | csr |
-                            +--+--+
-                               | job / status
-           s_axis_*       +----v-----+       m_axis_*
-         ----------------->|  engine  |------------------>
-           s_weight_*     |          |        irq
-         ----------------->|          |------------------>
-                          +----+-----+
-                               |
-                   +-----------v------------+
-                   | array_os OR array_ws   |
-                   | ROWS × COLS PEs        |
-                   | product + carry-save   |
-                   +-----------+------------+
-                               |
-                        finalizer/column
-                               |
-                           result FIFO
-```
+![Top level Block Diagram](images/lucid_ip_overview.png)
 
 - **One generated mesh per build:** `array_os`/`pe_os` or `array_ws`/`pe_ws`. The nonselected mesh is not instantiated.
 - **Arithmetic pipeline:** INT products have one registered product stage; FP16 products have three, plus any `EXTRA_PRODUCT_REGS`. Each PE accumulates with carry-save state. FP result finalization resolves the exact total and rounds once.
