@@ -4,8 +4,6 @@
 **Maintainers:** Stone Arch Silicon RTL team  
 **Top module:** `sa_top`  
 **Configuration package:** `rtl/sa_pkg.sv`  
-**Source baseline:** `Systolic_IP_Testbenches.zip` (RTL headers rev. 0.03; `delay.sv` rev. 0.04)  
-**Last verified revision:** Not recorded against a Git commit; see [Verification record](#verification-record)
 
 ## Purpose
 
@@ -223,11 +221,11 @@ ip/systolic_ip/
 │   ├── product.sv / finalize.sv     Numeric product and output conversion
 │   ├── delay.sv / fifo.sv           Transport alignment and output buffering
 │   └── files.f                     Ordered RTL compile list
-├── tb/
-│   ├── sa_tb.sv                    Full-IP self-checking tests
-│   ├── csr_tb.sv                   Control-interface tests
-│   ├── arithmetic_tb.sv            FP arithmetic directed/exhaustive-vector tests
-│   └── delay_tb.sv                 Transport and zero-depth bypass tests
+├── dv/
+    └── tb/
+│       ├── sa_tb.sv                    Full-IP self-checking tests
+│       ├── csr_tb.sv                   Control-interface tests
+│       └── arithmetic_tb.sv            FP arithmetic directed/exhaustive-vector tests
 ├── tools/
 │   ├── reference.py                Bit-exact model and full-IP vector generator
 │   └── generate_arithmetic.py      FP arithmetic vectors (imports reference.py)
@@ -284,24 +282,7 @@ vcs -full64 -sverilog -f rtl/files.f tb/arithmetic_tb.sv -top arithmetic_tb -o s
 
 **Expected:** `ARITHMETIC PASSED`. The documented generator covers all 65,536 binary16 bit patterns multiplied by one, directed exceptional cases, and randomized dot products. It is not a substitute for full OS/WS stream testing.
 
-### Delay helper check
-
-```bash
-vcs -full64 -sverilog rtl/delay.sv tb/delay_tb.sv -top delay_tb -o simv_delay -l compile_delay.log
-./simv_delay -l run_delay.log
-```
-
-**Expected:** `DELAY TEST PASSED`.
-
 **Rebuild rule:** Every change to `rtl/sa_pkg.sv` requires matching regenerated vectors **and** recompiled simulation binaries. For a released configuration, record the VCS build/version, exact Git SHA, random seed(s) used by the generator/testbench (or explicitly note deterministic/unseeded), PASS log path, and coverage. Never equate a successful compile with a passed simulation.
-
-## Verification record
-
-| Revision | Tool / version | Configuration | Result | Notes |
-| --- | --- | --- | --- | --- |
-| RTL headers rev. 0.03; `delay.sv` rev. 0.04; Git SHA unrecorded | Simulator/version not captured here | Default 8×8 OS INT8 plus documented parameter variants | Historical functional checks documented; not independently rerun for this README | Do not treat as reproducible release evidence without logs and revision ID |
-| Not yet recorded | Synopsys VCS/version TBD | Intended release matrix: OS/WS, INT2/4/8, FP16→FP16/FP32, rectangular/1×1, stalls, WS reuse | **VCS result not recorded** | Execute commands above in the configured CAD environment |
-| Not yet recorded | Target synthesis / STA / P&R tools TBD | Target library, corner and frequency TBD | **Not qualified** | No target-specific frequency, area, power, DFT, or signoff claim |
 
 **Known limitations:** One fixed build configuration; one job at a time; no independent memory DMA; no clock-domain crossing; no watchdog/abort; count-driven TLAST checking; no on-chip SRAM macros; no verified ASIC PPA/frequency; the public build identifier does not uniquely identify the RTL commit.
 
